@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>iisnode logs</title>
+    <style type="text/css">
+        body
+        {
+            font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+        }
+        table
+        {
+            border-collapse: collapse;
+        }
+        td, th
+        {
+            border: 1px solid lightgray;
+            padding: 3px 7px 2px 7px;
+        }
+        th
+        {
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: Gray;
+            color: #ffffff;
+        }
+        td.stderr
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <table id="logFilesTable">
+        <tr>
+            <th>
+                Computer name
+            </th>
+            <th>
+                PID
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Created
+            </th>
+            <th>
+                Link
+            </th>
+        </tr>
+    </table>
+    <p id="lastUpdated"></p>
+    <script type="text/javascript">
+
+        // this is replaced with actual data at runtime by code in interceptor.js
+        var logFiles = [{"file":"UIO-SRV-PASTAZA-13376-stderr-1715265738772.txt","computername":"UIO-SRV-PASTAZA","pid":13376,"type":"stderr","created":1715265738772},{"file":"UIO-SRV-PASTAZA-13376-stdout-1715265738763.txt","computername":"UIO-SRV-PASTAZA","pid":13376,"type":"stdout","created":1715265738763},{"file":"UIO-SRV-PASTAZA-13380-stderr-1715266475039.txt","computername":"UIO-SRV-PASTAZA","pid":13380,"type":"stderr","created":1715266475039},{"file":"UIO-SRV-PASTAZA-13380-stdout-1715266475025.txt","computername":"UIO-SRV-PASTAZA","pid":13380,"type":"stdout","created":1715266475025},{"file":"UIO-SRV-PASTAZA-15124-stderr-1715264943316.txt","computername":"UIO-SRV-PASTAZA","pid":15124,"type":"stderr","created":1715264943316},{"file":"UIO-SRV-PASTAZA-15124-stdout-1715264943308.txt","computername":"UIO-SRV-PASTAZA","pid":15124,"type":"stdout","created":1715264943308},{"file":"UIO-SRV-PASTAZA-15280-stderr-1715265867172.txt","computername":"UIO-SRV-PASTAZA","pid":15280,"type":"stderr","created":1715265867172},{"file":"UIO-SRV-PASTAZA-15280-stdout-1715265867164.txt","computername":"UIO-SRV-PASTAZA","pid":15280,"type":"stdout","created":1715265867164},{"file":"UIO-SRV-PASTAZA-15368-stderr-1715265443919.txt","computername":"UIO-SRV-PASTAZA","pid":15368,"type":"stderr","created":1715265443919},{"file":"UIO-SRV-PASTAZA-15368-stdout-1715265443912.txt","computername":"UIO-SRV-PASTAZA","pid":15368,"type":"stdout","created":1715265443912},{"file":"UIO-SRV-PASTAZA-15576-stderr-1715270022941.txt","computername":"UIO-SRV-PASTAZA","pid":15576,"type":"stderr","created":1715270022941},{"file":"UIO-SRV-PASTAZA-15576-stdout-1715270022934.txt","computername":"UIO-SRV-PASTAZA","pid":15576,"type":"stdout","created":1715270022934},{"file":"UIO-SRV-PASTAZA-15808-stderr-1715266191076.txt","computername":"UIO-SRV-PASTAZA","pid":15808,"type":"stderr","created":1715266191076},{"file":"UIO-SRV-PASTAZA-15808-stdout-1715266191068.txt","computername":"UIO-SRV-PASTAZA","pid":15808,"type":"stdout","created":1715266191068},{"file":"UIO-SRV-PASTAZA-16112-stderr-1715267309210.txt","computername":"UIO-SRV-PASTAZA","pid":16112,"type":"stderr","created":1715267309210},{"file":"UIO-SRV-PASTAZA-16112-stdout-1715267309203.txt","computername":"UIO-SRV-PASTAZA","pid":16112,"type":"stdout","created":1715267309203},{"file":"UIO-SRV-PASTAZA-16204-stderr-1715265329018.txt","computername":"UIO-SRV-PASTAZA","pid":16204,"type":"stderr","created":1715265329018},{"file":"UIO-SRV-PASTAZA-16204-stdout-1715265329010.txt","computername":"UIO-SRV-PASTAZA","pid":16204,"type":"stdout","created":1715265329010},{"file":"UIO-SRV-PASTAZA-16928-stderr-1715268986264.txt","computername":"UIO-SRV-PASTAZA","pid":16928,"type":"stderr","created":1715268986264},{"file":"UIO-SRV-PASTAZA-16928-stdout-1715268986256.txt","computername":"UIO-SRV-PASTAZA","pid":16928,"type":"stdout","created":1715268986256},{"file":"UIO-SRV-PASTAZA-17396-stderr-1715268551935.txt","computername":"UIO-SRV-PASTAZA","pid":17396,"type":"stderr","created":1715268551935},{"file":"UIO-SRV-PASTAZA-17396-stdout-1715268551926.txt","computername":"UIO-SRV-PASTAZA","pid":17396,"type":"stdout","created":1715268551926}];
+        var lastUpdated = 1715270024273;
+        var date = new Date();
+
+        date.setTime(lastUpdated);
+        document.getElementById('lastUpdated').innerHTML = 'Index was last updated ' + date;
+
+        logFiles.sort(function (a, b) {
+            return b.created - a.created;
+        });
+
+        var logFilesTable = document.getElementById("logFilesTable");
+        for (var i = 0; i < logFiles.length; i++) {
+            var logFile = logFiles[i];
+            date.setTime(logFile.created);
+            var row = logFilesTable.insertRow(-1);
+            var computerNameCell = row.insertCell(0);
+            var pidCell = row.insertCell(1);
+            var typeCell = row.insertCell(2);
+            var dateCell = row.insertCell(3);
+            var logCell = row.insertCell(4);
+            computerNameCell.innerHTML = logFile.computername;
+            pidCell.innerHTML = logFile.pid.toString();
+            typeCell.innerHTML = logFile.type;
+            typeCell.setAttribute('class', logFile.type);
+            dateCell.innerHTML = date.toString();
+            logCell.innerHTML = '<a href="' + logFile.file + '">log</a>';
+        };
+
+    </script>
+</body>
+</html>

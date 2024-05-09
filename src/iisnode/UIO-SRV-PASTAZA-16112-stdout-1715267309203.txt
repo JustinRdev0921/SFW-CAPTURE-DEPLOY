@@ -1,0 +1,16 @@
+[31merror[39m: Error al ejecutar la consulta SQL: Requests can only be made in the LoggedIn state, not the SentTLSSSLNegotiation state {"code":"EINVALIDSTATE","stack":"Error: Requests can only be made in the LoggedIn state, not the SentTLSSSLNegotiation state\n    at Connection.makeRequest (C:\\SoftwareCaptura - deploy\\node_modules\\tedious\\lib\\connection.js:2068:24)\n    at Connection.execSql (C:\\SoftwareCaptura - deploy\\node_modules\\tedious\\lib\\connection.js:1640:10)\n    at result (file:///C:/SoftwareCaptura%20-%20deploy/src/models/user.model.js:81:28)\n    at new Promise (<anonymous>)\n    at User.findOne (file:///C:/SoftwareCaptura%20-%20deploy/src/models/user.model.js:67:34)\n    at login (file:///C:/SoftwareCaptura%20-%20deploy/src/controllers/auth.controller.js:50:38)\n    at Layer.handle [as handle_request] (C:\\SoftwareCaptura - deploy\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\SoftwareCaptura - deploy\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at file:///C:/SoftwareCaptura%20-%20deploy/src/middlewares/validator.middleware.js:4:9\n    at Layer.handle [as handle_request] (C:\\SoftwareCaptura - deploy\\node_modules\\express\\lib\\router\\layer.js:95:5)"}
+conectado a BD
+C:\SoftwareCaptura - deploy\Files\fbb85047-a194-43d4-a433-9a29c99b7dea-_-423.pdf
+[Error: ENOENT: no such file or directory, open 'C:\SoftwareCaptura - deploy\Files\fbb85047-a194-43d4-a433-9a29c99b7dea-_-423.pdf'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\SoftwareCaptura - deploy\\Files\\fbb85047-a194-43d4-a433-9a29c99b7dea-_-423.pdf'
+}
+[Error: ENOENT: no such file or directory, open 'C:\SoftwareCaptura - deploy\Files\fbb85047-a194-43d4-a433-9a29c99b7dea-_-423.pdf'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\SoftwareCaptura - deploy\\Files\\fbb85047-a194-43d4-a433-9a29c99b7dea-_-423.pdf'
+}
+[31merror[39m: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\SoftwareCaptura - deploy\\Files\\fbb85047-a194-43d4-a433-9a29c99b7dea-_-423.pdf","syscall":"open"}

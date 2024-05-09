@@ -1,0 +1,14 @@
+[Error: ENOENT: no such file or directory, open 'C:\SoftwareCaptura - deploy\Files\4da084ad-7e13-4d1f-95ea-1ee6657d93e9-_-423.pdf'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\SoftwareCaptura - deploy\\Files\\4da084ad-7e13-4d1f-95ea-1ee6657d93e9-_-423.pdf'
+}
+[Error: ENOENT: no such file or directory, open 'C:\SoftwareCaptura - deploy\Files\4da084ad-7e13-4d1f-95ea-1ee6657d93e9-_-423.pdf'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\SoftwareCaptura - deploy\\Files\\4da084ad-7e13-4d1f-95ea-1ee6657d93e9-_-423.pdf'
+}
+[31merror[39m: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\SoftwareCaptura - deploy\\Files\\4da084ad-7e13-4d1f-95ea-1ee6657d93e9-_-423.pdf","syscall":"open"}
+conectado a BD

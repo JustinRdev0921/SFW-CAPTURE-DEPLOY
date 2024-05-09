@@ -1,0 +1,15 @@
+(node:15368) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Thu, 09 May 2024 14:37:50 GMT express deprecated res.send(status, body): Use res.status(status).send(body) instead at file:\C:\SoftwareCaptura%20-%20deploy\src\controllers\users.controller.js:104:40
+Application has thrown an uncaught exception and is terminated:
+RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: Error al guardar el ARCHIVO.
+    at ServerResponse.writeHead (node:_http_server:352:11)
+    at ServerResponse.writeHead (C:\SoftwareCaptura - deploy\node_modules\on-headers\index.js:44:26)
+    at ServerResponse._implicitHeader (node:_http_server:338:8)
+    at write_ (node:_http_outgoing:945:9)
+    at ServerResponse.end (node:_http_outgoing:1056:5)
+    at ServerResponse.send (C:\SoftwareCaptura - deploy\node_modules\express\lib\response.js:233:10)
+    at ServerResponse.json (C:\SoftwareCaptura - deploy\node_modules\express\lib\response.js:279:15)
+    at ServerResponse.send (C:\SoftwareCaptura - deploy\node_modules\express\lib\response.js:163:21)
+    at file:///C:/SoftwareCaptura%20-%20deploy/src/controllers/users.controller.js:104:40
+    at C:\SoftwareCaptura - deploy\node_modules\express-fileupload\lib\utilities.js:64:44

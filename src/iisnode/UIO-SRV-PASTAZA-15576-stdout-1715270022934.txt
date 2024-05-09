@@ -1,0 +1,74 @@
+[31merror[39m: Error al ejecutar la consulta SQL: Requests can only be made in the LoggedIn state, not the SentPrelogin state {"code":"EINVALIDSTATE","stack":"Error: Requests can only be made in the LoggedIn state, not the SentPrelogin state\n    at Connection.makeRequest (C:\\SoftwareCaptura - deploy\\node_modules\\tedious\\lib\\connection.js:2068:24)\n    at Connection.execSql (C:\\SoftwareCaptura - deploy\\node_modules\\tedious\\lib\\connection.js:1640:10)\n    at result (file:///C:/SoftwareCaptura%20-%20deploy/src/models/user.model.js:81:28)\n    at new Promise (<anonymous>)\n    at User.findOne (file:///C:/SoftwareCaptura%20-%20deploy/src/models/user.model.js:67:34)\n    at login (file:///C:/SoftwareCaptura%20-%20deploy/src/controllers/auth.controller.js:50:38)\n    at Layer.handle [as handle_request] (C:\\SoftwareCaptura - deploy\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\SoftwareCaptura - deploy\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at file:///C:/SoftwareCaptura%20-%20deploy/src/middlewares/validator.middleware.js:4:9\n    at Layer.handle [as handle_request] (C:\\SoftwareCaptura - deploy\\node_modules\\express\\lib\\router\\layer.js:95:5)"}
+conectado a BD
+C:\Users\AdminTest\Documents\Files\763ced99-6551-4a53-a1c6-c6ed31c3d4a0-_-423.pdf
+undefined
+Procesamiento {
+  numeroExpediente: '423',
+  idProcesamiento: '763ced99-6551-4a53-a1c6-c6ed31c3d4a0',
+  idSitio: 'RH-GER',
+  idCiudad: 'CUE',
+  idArea: 'NOM',
+  idGrupo: 'MDT',
+  idTipoDoc: 'FIN',
+  fechaProcesamiento: '2024-05-09T00:00:00.000Z',
+  nombreArchivo: '763ced99-6551-4a53-a1c6-c6ed31c3d4a0-_-423.pdf',
+  username: 'admin',
+  cedula: '0101720076',
+  apellidos: 'TUAPANTE PRADO',
+  nombres: 'HUGO TEODORO',
+  cargo: 'GERENTE DE PLANTA',
+  division: 'CORRUGADORA CUENCA',
+  seleccion: 'CORR.CUENCA INDIRECTOS DE FABRICACION',
+  ciudad: 'CUENCA',
+  tipoContrato: undefined,
+  estadoEmpleado: 'ACTIVO'
+}
+Procesamiento creado con éxito
+C:\Users\AdminTest\Documents\Files\54bb6cea-93ea-4753-a952-8e0408c2a246-_-423.pdf
+undefined
+Procesamiento {
+  numeroExpediente: '423',
+  idProcesamiento: '54bb6cea-93ea-4753-a952-8e0408c2a246',
+  idSitio: 'RH-GER',
+  idCiudad: 'CUE',
+  idArea: 'NOM',
+  idGrupo: 'NOV',
+  idTipoDoc: 'PRO-NOM-HAB',
+  fechaProcesamiento: '2024-05-09T00:00:00.000Z',
+  nombreArchivo: '54bb6cea-93ea-4753-a952-8e0408c2a246-_-423.pdf',
+  username: 'admin',
+  cedula: '0101720076',
+  apellidos: 'TUAPANTE PRADO',
+  nombres: 'HUGO TEODORO',
+  cargo: 'GERENTE DE PLANTA',
+  division: 'CORRUGADORA CUENCA',
+  seleccion: 'CORR.CUENCA INDIRECTOS DE FABRICACION',
+  ciudad: 'CUENCA',
+  tipoContrato: undefined,
+  estadoEmpleado: 'ACTIVO'
+}
+Procesamiento creado con éxito
+C:\Users\AdminTest\Documents\Files\95655f3c-495c-492a-ad31-4ec3961cd5d3-_-423.pdf
+undefined
+Procesamiento {
+  numeroExpediente: '423',
+  idProcesamiento: '95655f3c-495c-492a-ad31-4ec3961cd5d3',
+  idSitio: 'RH-GER',
+  idCiudad: 'CUE',
+  idArea: 'SEL',
+  idGrupo: 'CON-PER',
+  idTipoDoc: 'CER-ENT-CON',
+  fechaProcesamiento: '2024-05-09T00:00:00.000Z',
+  nombreArchivo: '95655f3c-495c-492a-ad31-4ec3961cd5d3-_-423.pdf',
+  username: 'rcastillo',
+  cedula: '0101720076',
+  apellidos: 'TUAPANTE PRADO',
+  nombres: 'HUGO TEODORO',
+  cargo: 'GERENTE DE PLANTA',
+  division: 'CORRUGADORA CUENCA',
+  seleccion: 'CORR.CUENCA INDIRECTOS DE FABRICACION',
+  ciudad: 'CUENCA',
+  tipoContrato: undefined,
+  estadoEmpleado: 'ACTIVO'
+}
+Procesamiento creado con éxito
