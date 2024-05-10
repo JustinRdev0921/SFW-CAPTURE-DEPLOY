@@ -1,0 +1,49 @@
+conectado a BD
+C:\Users\AdminTest\Documents\Files\ea038fcb-44a3-4417-81d0-d2bb1a7c3390-_-423.pdf
+undefined
+Procesamiento {
+  numeroExpediente: '423',
+  idProcesamiento: 'ea038fcb-44a3-4417-81d0-d2bb1a7c3390',
+  idSitio: 'RH-GER',
+  idCiudad: 'CUE',
+  idArea: 'SEL',
+  idGrupo: 'CON-PER',
+  idTipoDoc: 'AVI-ENT-IES',
+  fechaProcesamiento: '2024-05-10T00:00:00.000Z',
+  nombreArchivo: 'ea038fcb-44a3-4417-81d0-d2bb1a7c3390-_-423.pdf',
+  username: 'admin',
+  cedula: '0101720076',
+  apellidos: 'TUAPANTE PRADO',
+  nombres: 'HUGO TEODORO',
+  cargo: 'GERENTE DE PLANTA',
+  division: 'CORRUGADORA CUENCA',
+  seleccion: 'CORR.CUENCA INDIRECTOS DE FABRICACION',
+  ciudad: 'CUENCA',
+  tipoContrato: undefined,
+  estadoEmpleado: 'ACTIVO'
+}
+Procesamiento creado con éxito
+C:\Users\AdminTest\Documents\Files\c164e0eb-39a9-4326-b8a5-6df51600da7b-_-423.pdf
+undefined
+Procesamiento {
+  numeroExpediente: '423',
+  idProcesamiento: 'c164e0eb-39a9-4326-b8a5-6df51600da7b',
+  idSitio: 'RH-GER',
+  idCiudad: 'CUE',
+  idArea: 'SEL',
+  idGrupo: 'CON-PER',
+  idTipoDoc: 'AVI-ENT-IES',
+  fechaProcesamiento: '2024-05-10T00:00:00.000Z',
+  nombreArchivo: 'c164e0eb-39a9-4326-b8a5-6df51600da7b-_-423.pdf',
+  username: 'admin',
+  cedula: '0101720076',
+  apellidos: 'TUAPANTE PRADO',
+  nombres: 'HUGO TEODORO',
+  cargo: 'GERENTE DE PLANTA',
+  division: 'CORRUGADORA CUENCA',
+  seleccion: 'CORR.CUENCA INDIRECTOS DE FABRICACION',
+  ciudad: 'CUENCA',
+  tipoContrato: undefined,
+  estadoEmpleado: 'ACTIVO'
+}
+Procesamiento creado con éxito

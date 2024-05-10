@@ -1,4 +1,0 @@
-test
-\\.\pipe\36c2f08e-887e-4b30-a1a3-e5037861b244
-conectado a BD
-[31merror[39m: undefined {"code":"ENOENT","errno":-4058,"path":"C:\\SoftwareCaptura - deploy\\FilesAPL\\8af6408b-f8e7-43e8-b355-87e4e747d9ff-_-423.pdf","syscall":"open"}
