@@ -1,0 +1,47 @@
+**********************************DEPLOY EN IIS APLICACIÓN CAPTURA DOCS*********************************
+
+BASE DE DATOS:
+*CREACIÓN DE BD Y TABLAS 
+*VALIDAR PUERTO DE CONEXIÓN ENTRE BACKEND Y BD
+
+****************DESCARGA DE PROYECTO DESDE GITHUB**************************************************
+
+gh repo clone JustinRdev0921/SFW-CAPTURE-DEPLOY
+
+-->INSTALAR node_modules: npm install
+-->VALIDAR archivos package.json
+
+****************************CONSIDERACIONES BACKEND: ***********************************************
+
+-->INSTALAR CONTROLADORES IIS:
+
+IISNODE: https://github.com/Azure/iisnode/releases/tag/v0.2.26
+URL REWRITE: https://www.iis.net/downloads/microsoft/url-rewrite
+REQUEST ROUTING: https://www.iis.net/downloads/microsoft/application-request-routing
+
+-->VALIDAR EN MODULOS QUE IISNODE SE HAYA INSTALADO.
+
+-->CONFIGURAR IISNODE EN ASIGNACIONES DE CONTROLADOR:
+	RUTA DE ACCESO DE SOLICITUDES: run.cjs
+	Módulo: iisnode
+	
+-->Configurar archivo run.cjs para llamar a index.js y traspilar de CMJS A EMS6 JS
+
+-->Validar configuración de web.config para reglas. puerto e IP backend 192.168.80.29:7000
+
+-->Validar configuración de web.config para reglas. puerto e IP FRONTEND 192.168.80.29:8888
+
+-->VALIDAR REGLAS DE FIREWALL CON INFRAESTRUCTURA!!
+
+-->VALIDAR PERMISOS EN RUTA DE ACCESO FTP - CAMBIAR PATH
+
+-->CAMBIAR LLAMADO A WS DE CLIENTE.
+
+****************************CONSIDERACIONES FRONTEND: ***********************************************
+
+-->VALIDAR PUERTO EN AXIOS: 192.168.80.29:8888
+
+-->npm run build
+
+-->VALIDAR regla de rewrite en sitio frontend con web.config
+

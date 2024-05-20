@@ -10,11 +10,12 @@ import path from "path";
 import fs from "fs";
 import logger from "./logger.js";
 import { log } from "console";
+import { ORIGEN_FRONT } from "./config.js";
 
 const app = express();
 
 app.use(cors({
-  origin: 'http://192.168.80.29:8888',
+  origin: 'http://localhost:5173',
   credentials: true
 }));
 

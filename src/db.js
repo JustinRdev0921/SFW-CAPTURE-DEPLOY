@@ -1,17 +1,18 @@
 import {Connection} from 'tedious';
+import { PORT, USERNAME, PASSWORD, DATABASE, SERVER_BD } from "./config.js";
 
 const config = {
-    server: 'UIO-SRV-PASTAZA',
+    server: SERVER_BD,
     authentication: {
         type: 'default',
         options: {
-          userName: 'sa',
-          password: 'Ecuacopia2024*',
+          userName: USERNAME,
+          password: PASSWORD,
         },
       },
       options: {
-        port: 1433,
-        database: 'SoftwareCaptura',
+        port: PORT,
+        database: DATABASE,
         encrypt: true,
         trustServerCertificate: true
       },

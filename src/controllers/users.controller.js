@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs";
 import path from "path";
 import fs from "fs";
 import logger from "../logger.js";
+import { RUTA_FILES, RUTA_FILES_ZIP } from "../config.js";
 
 export const getUsers = async (req, res) => {
   try {
@@ -112,19 +113,22 @@ export const fileUpload = async (req, res) => {
     }
 
     const archivo = req.files.archivo;
-    const { idProcesamiento, numeroExpediente } = req.body; // Obtener información de idProcesamiento y numeroExpediente del cuerpo de la solicitud
+    const { idProcesamiento, numeroExpediente,idArea, idGrupo } = req.body; // Obtener información de idProcesamiento y numeroExpediente del cuerpo de la solicitud
     const extension = path.extname(archivo.name); // Obtener la extensión del archivo
     const nombreArchivo = `${idProcesamiento}-_-${numeroExpediente}${extension}`; // Construir el nombre del archivo con idProcesamiento y numeroExpediente
-    const rutaGuardar = path.join("C:/Users/AdminTest/Documents/Files", nombreArchivo);
-    console.log(rutaGuardar)
-    //C:/Users/AdminTest/Documents/Files
-    // falta permiso del iis para mover archivo a la carpeta files
-    // otorgar permisos a la carpeta files de escritura
+
+    let rutaGuardar = ""
+    if (idArea === "rrhhNomina" && idGrupo === "NOV") {
+      rutaGuardar = path.join(process.cwd(), RUTA_FILES_ZIP, nombreArchivo);
+    } else {
+      rutaGuardar = path.join(process.cwd(), RUTA_FILES, nombreArchivo);
+    }
+
     archivo.mv(rutaGuardar, (err) => {
-        console.log(err);
+      console.log(err);
       if (err) {
         console.log(err);
-      logger.error(err);
+        logger.error(err);
         return res.status(500).send("Error al guardar el ARCHIVO.");
       }
       res.send("Archivo cargado y guardado correctamente");

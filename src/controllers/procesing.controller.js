@@ -47,8 +47,8 @@ export const getProcesamientos = async (req, res) => {
 
 export const createProcesamiento = async (req, res) => {
     try {
-        const { numeroExpediente, idProcesamiento, idSitio, idCiudad, idArea, idGrupo, idTipoDoc, fechaProcesamiento, nombreArchivo, username, cedula, apellidos, nombres, cargo, division, seleccion, ciudad, tipoContrato, estadoEmpleado} = req.body
-        const newProceso = new Procesamiento(numeroExpediente, idProcesamiento, idSitio, idCiudad, idArea, idGrupo, idTipoDoc, fechaProcesamiento, nombreArchivo, username, cedula, apellidos, nombres, cargo, division, seleccion, ciudad, tipoContrato, estadoEmpleado)
+        const { numeroExpediente, idProcesamiento, idSitio, idCiudad, idArea, idGrupo, idTipoDoc, fechaProcesamiento, nombreArchivo, username, cedula, apellidos, nombres, cargo, division, seccion, ciudad, tipoContrato, estadoEmpleado, nombreArchivoOriginal} = req.body
+        const newProceso = new Procesamiento(numeroExpediente, idProcesamiento, idSitio, idCiudad, idArea, idGrupo, idTipoDoc, fechaProcesamiento, nombreArchivo, username, cedula, apellidos, nombres, cargo, division, seccion, ciudad, tipoContrato, estadoEmpleado, nombreArchivoOriginal)
         console.log(newProceso);
         const savedProceso = await newProceso.create()
         res.json({
@@ -68,10 +68,11 @@ export const createProcesamiento = async (req, res) => {
             nombres: newProceso.nombres,
             cargo: newProceso.cargo,
             division: newProceso.division,
-            seleccion: newProceso.seleccion,
+            seccion: newProceso.seccion,
             ciudad: newProceso.ciudad,
             tipoContrato: newProceso.tipoContrato,
             estadoEmpleado: newProceso.estadoEmpleado,
+            nombreArchivoOriginal: newProceso.nombreArchivoOriginal,
             message: "Proceso registrado correctamente"
         });
     } catch (error) {

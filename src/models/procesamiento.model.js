@@ -9,10 +9,11 @@ class Procesamiento {
         nombres,
         cargo,
         division,
-        seleccion,
+        seccion,
         ciudad,
         tipoContrato,
-        estadoEmpleado) {
+        estadoEmpleado,
+        nombreArchivoOriginal) {
         this.numeroExpediente = numeroExpediente;
         this.idProcesamiento = idProcesamiento;
         this.idSitio = idSitio;
@@ -28,10 +29,11 @@ class Procesamiento {
         this.nombres = nombres;
         this.cargo = cargo;
         this.division = division;
-        this.seleccion = seleccion;
+        this.seccion = seccion;
         this.ciudad = ciudad;
         this.tipoContrato = tipoContrato;
         this.estadoEmpleado = estadoEmpleado;
+        this.nombreArchivoOriginal = nombreArchivoOriginal;
     }
 
     static async find() {
@@ -69,9 +71,9 @@ class Procesamiento {
     async create() {
         try {
             const request = new Request(`
-                INSERT INTO Procesamiento (numeroExpediente, idProcesamiento, idSitio, idCiudad, idArea, idGrupo, idTipoDoc, fechaProcesamiento, nombreArchivo, username, cedula, apellidos, nombres, cargo, division, seleccion, ciudad, tipoContrato, estadoEmpleado)
+                INSERT INTO Procesamiento (numeroExpediente, idProcesamiento, idSitio, idCiudad, idArea, idGrupo, idTipoDoc, fechaProcesamiento, nombreArchivo, username, cedula, apellidos, nombres, cargo, division, seccion, ciudad, tipoContrato, estadoEmpleado, nombreArchivoOriginal)
                 OUTPUT INSERTED.id
-                VALUES (@numeroExpediente, @idProcesamiento, @idSitio, @idCiudad, @idArea, @idGrupo, @idTipoDoc, @fechaProcesamiento, @nombreArchivo, @username, @cedula, @apellidos, @nombres, @cargo, @division, @seleccion, @ciudad, @tipoContrato, @estadoEmpleado)`, (err) => {
+                VALUES (@numeroExpediente, @idProcesamiento, @idSitio, @idCiudad, @idArea, @idGrupo, @idTipoDoc, @fechaProcesamiento, @nombreArchivo, @username, @cedula, @apellidos, @nombres, @cargo, @division, @seccion, @ciudad, @tipoContrato, @estadoEmpleado, @nombreArchivoOriginal)`, (err) => {
                 if (err) {
                     console.error('Error al ejecutar la consulta SQL:', err);
                 }
@@ -92,10 +94,12 @@ class Procesamiento {
             request.addParameter('nombres', TYPES.NVarChar, this.nombres);
             request.addParameter('cargo', TYPES.NVarChar, this.cargo);
             request.addParameter('division', TYPES.NVarChar, this.division);
-            request.addParameter('seleccion', TYPES.NVarChar, this.seleccion);
+            request.addParameter('seccion', TYPES.NVarChar, this.seccion);
             request.addParameter('ciudad', TYPES.NVarChar, this.ciudad);
             request.addParameter('tipoContrato', TYPES.NVarChar, this.tipoContrato);
             request.addParameter('estadoEmpleado', TYPES.NVarChar, this.estadoEmpleado);
+            request.addParameter('nombreArchivoOriginal', TYPES.NVarChar, this.nombreArchivoOriginal);
+
 
 
             const result = await new Promise((resolve, reject) => {
