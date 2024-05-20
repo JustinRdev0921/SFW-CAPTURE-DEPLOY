@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";
-import {ciudadesOptions, sitiosOptions,} from "../api/options";
+import { ciudadesOptions, sitiosOptions, } from "../api/options";
 import { fileUploadRequest } from "../api/usuarios";
 import { getEmpleadoRequest } from "../api/empleado";
 import { createProcesingRequest, getAreasRequest, getGruposRequest, getTiposDocRequest } from "../api/procesing";
@@ -35,6 +35,7 @@ function CargaDocsPage() {
   const selectedArea = watchEnviar("area");
   const selectedGrupo = watchEnviar("grupo");
   const [archivoSeleccionado, setArchivoSeleccionado] = useState(null);
+  const [nombreArchivoOriginal, setNombreArchivoOriginal] = useState(null);
   const [pdfFile, setPDFFile] = useState(null);
   const [visualizadorPdf, setVisualizadorPdf] = useState(null);
   const fileType = ["application/pdf"];
@@ -46,6 +47,7 @@ function CargaDocsPage() {
   const [errorMessage, setErrorMessage] = useState(""); // Estado para mostrar el mensaje de error
 
   const [areasOptions, setAreasOptions] = useState([]);
+  const [filteredAreas, setFilteredAreas] = useState([]);
   const [gruposOptions, setGruposOptions] = useState([]);
   const [tipoDocumentoOptions, setTipoDocumentoOptions] = useState([]);
 
@@ -53,7 +55,10 @@ function CargaDocsPage() {
     const fetchData = async () => {
       try {
         const areasResponse = await getAreasRequest();
-        setAreasOptions(areasResponse.data);
+        const filteredAreas = user.Admin !== 1
+          ? areasResponse.data.filter(area => area.id === user.idArea)
+          : areasResponse.data;
+        setFilteredAreas(filteredAreas);
 
         const gruposResponse = await getGruposRequest();
         setGruposOptions(gruposResponse.data);
@@ -89,7 +94,7 @@ function CargaDocsPage() {
     setFilteredTipos(filteredTipos);
     //console.log(filteredTipos);
     setValueEnviar("tipoDocumento", "");
-  }, [selectedGrupo,tipoDocumentoOptions, setValueEnviar]);
+  }, [selectedGrupo, tipoDocumentoOptions, setValueEnviar]);
 
   const onSubmitBuscar = handleSubmitBuscar(async (data) => {
     try {
@@ -133,17 +138,18 @@ function CargaDocsPage() {
             idGrupo: data.grupo,
             idTipoDoc: data.tipoDocumento,
             fechaProcesamiento: fechaProcesamiento.toISOString(),
-            nombreArchivo: `${idProcesamiento}-_-${numeroExpediente}.pdf`,
+            nombreArchivo: `${idProcesamiento}-_-${numeroExpediente}`,
             username: usuario,
             cedula: empleado.CEDULA,
             apellidos: empleado.APELLIDOS,
             nombres: empleado.NOMBRES,
             cargo: empleado.CARGO,
             division: empleado.DIVISION,
-            seleccion: empleado.SELECCION,
+            seccion: empleado.SECCION,
             ciudad: empleado.CIUDAD,
             tipoContrato: empleado.TIPO_CONTRATO,
             estadoEmpleado: empleado.ESTADO,
+            nombreArchivoOriginal
           });
           setSuccessMessage("¡Proceso completado con éxito!");
         } else {
@@ -176,6 +182,7 @@ function CargaDocsPage() {
 
   const handleFileChange = (event) => {
     setArchivoSeleccionado(event.target.files[0]);
+    setNombreArchivoOriginal(event.target.files[0].name)
     let selectedFile = event.target.files[0];
     if (selectedFile) {
       if (selectedFile && fileType.includes(selectedFile.type)) {
@@ -269,14 +276,14 @@ function CargaDocsPage() {
           </div>
           <div className="mb-4">
             <label htmlFor="area" className="block mb-2">
-              Area
+              Área
             </label>
             <select
               {...registerEnviar("area", { required: true })}
               id="area"
               className="w-full bg-gray-200 rounded-md px-4 py-2"
             >
-              {areasOptions.map((area) => (
+              {filteredAreas.map((area) => (
                 <option key={area.id} value={area.id}>
                   {area.nombreArea}
                 </option>

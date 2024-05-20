@@ -60,12 +60,12 @@ export const areasOptionsS = [
     { id: 9, nombre: "Autorizacion de descuento en rol de pagos", idGrupo: 5 },
   ];*/
 
-export const sitiosOptions = [
-  { id: "RH-GER", nombre: "RRHH GERENCIA" },
-  { id: "RH-ADM", nombre: "RRHH ADMINISTRACION" },
-  { id: "RH-PLA", nombre: "RRHH PLANTA" },
-  { id: "RH-ENT", nombre: "RRHH ENTRENAMIENTO" },
-];
+  export const sitiosOptions = [
+    { id: "RECURSOS-HUMANOS-GERENTES", nombre: "RRHH GERENTES" },
+    { id: "RECURSOS-HUMANOS-ADMINISTRACION", nombre: "RRHH ADMINISTRACION" },
+    { id: "RECURSOS-HUMANOS-PLANTAS", nombre: "RRHH PLANTA" },
+    { id: "RECURSOS-HUMANOS-CAPACITACION", nombre: "RRHH CAPACITACION" },
+  ];
 
 /*
 export let areasOptions = [];
